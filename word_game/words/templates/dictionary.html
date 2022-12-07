@@ -1,10 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{%  block content %}
+<div id="search_input">
+<form hx-get="/search" hx-target="#search_results">
+    <div class="input-group">
+        <input type="text" required class="form-control" name="search" placeholder="Search your favorite word.......">
+        <div class="input-group-append">
+            <button class="btn btn-success" type="submit">
 
-</body>
-</html>
+                Search
+            </button>
+            <button class="btn btn-success" type="submit" hx-post="/search" hx-target="#search_input">Clear</button>
+        </div>
+
+    </div>
+</form>
+<div class="container" style="padding-top: 100px;">
+<div id="search_results">
+
+
+</div>
+</div>
+</div>
+
+
+
+{% endblock %}
