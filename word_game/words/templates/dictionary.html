@@ -1,15 +1,12 @@
 {% extends 'base.html' %}
 {%  block content %}
-
-
 <div id="search_input">
-
-       <div class="container" style="padding-top: 150px;">
-           <h1 style="color:#5cb85c;">Word meanings</h1>
+    <div class="container" style="padding-top: 150px;">
+           <h1 style="color:#5cb85c;">Word meanings....</h1>
 <form hx-get="/search" hx-target="#search_results">
-    <div class="form-group">
+    <div class="form-group col-md-4" >
         <input type="text" required class="form-control" name="search"
-               placeholder="Enter a word to find it's meaning.......">
+               placeholder="Enter a word">
         <div class="input-group-append">
             <button class="btn btn-success m-4 me-1" type="submit">
                 Search
@@ -19,7 +16,7 @@
     </div>
 </form>
         </div>
-    <div class="container" style="padding-top: 100px;">
+    <div class="container" style="padding-top: 50px;">
         <div id="search_results"></div>
     </div>
 </div>
