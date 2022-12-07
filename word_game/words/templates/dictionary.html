@@ -1,27 +1,26 @@
 {% extends 'base.html' %}
 {%  block content %}
-<div id="search_input">
-<form hx-get="/search" hx-target="#search_results">
-    <div class="input-group">
-        <input type="text" required class="form-control" name="search" placeholder="Search your favorite word.......">
-        <div class="input-group-append">
-            <button class="btn btn-success" type="submit">
 
+
+<div id="search_input">
+
+       <div class="container" style="padding-top: 150px;">
+           <h1 style="color:#5cb85c;">Word meanings</h1>
+<form hx-get="/search" hx-target="#search_results">
+    <div class="form-group">
+        <input type="text" required class="form-control" name="search"
+               placeholder="Enter a word to find it's meaning.......">
+        <div class="input-group-append">
+            <button class="btn btn-success m-4 me-1" type="submit">
                 Search
             </button>
-            <button class="btn btn-success" type="submit" hx-post="/search" hx-target="#search_input">Clear</button>
+            <button class="btn btn-primary" type="submit" hx-post="/search" hx-target="#search_input">Clear</button>
         </div>
-
     </div>
 </form>
-<div class="container" style="padding-top: 100px;">
-<div id="search_results">
-
-
+        </div>
+    <div class="container" style="padding-top: 100px;">
+        <div id="search_results"></div>
+    </div>
 </div>
-</div>
-</div>
-
-
-
 {% endblock %}
