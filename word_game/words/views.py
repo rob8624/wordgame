@@ -13,11 +13,13 @@ def search_view(request):
     word = request.GET.get('search')
     dictionary = PyDictionary()
     meanings = dictionary.meaning(word)
-    if meanings is not None:
-        for k, v in meanings.items():
-            key = k
-            value = v
-            context = {'k': key, 'v': value, 'word': word}
+    context = {'meanings': meanings, 'word': word}
+
+
+    # if meanings is not None:
+    #     for k, v in meanings.items():
+    #
+    #        context = {'k': k, 'v': v, 'word': word}
 
     if meanings != None:
         return render(request, 'test.html', context)
@@ -28,6 +30,7 @@ def search_view(request):
 def clipboard_view(request):
     checked_meaning = request.POST.get('meaning')
     pyperclip.copy(checked_meaning)
+    print(checked_meaning)
 
     return HttpResponse(f"copied word meaning to your clipboard")
 

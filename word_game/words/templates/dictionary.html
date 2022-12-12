@@ -1,7 +1,11 @@
 {% extends 'base.html' %}
 {%  block content %}
+
+
 <div id="search_input">
     <div class="container" style="padding-top: 150px;">
+        <div class=" row">
+
            <h1 style="color:#5cb85c;">Word meanings....</h1>
 <form hx-get="/search" hx-target="#search_results">
     <div class="form-group col-md-4" >
@@ -13,9 +17,13 @@
             </button>
             <button class="btn btn-primary" type="submit" hx-post="/search" hx-target="#search_input">Clear</button>
         </div>
+
+        </div>
     </div>
 </form>
         </div>
+
+
     <div class="container" style="padding-top: 50px;">
         <div id="search_results" class="blockquote">
 
