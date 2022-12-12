@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from PyDictionary import PyDictionary
+import pyperclip
+
 
 def home_view(request):
-
     return render(request, 'dictionary.html')
 
 def search_view(request):
@@ -12,12 +13,23 @@ def search_view(request):
     word = request.GET.get('search')
     dictionary = PyDictionary()
     meanings = dictionary.meaning(word)
+    if meanings is not None:
+        for k, v in meanings.items():
+            key = k
+            value = v
+            context = {'k': key, 'v': value, 'word': word}
+
     if meanings != None:
-        return HttpResponse(f"{word} means {meanings}")
+        return render(request, 'test.html', context)
     else:
         return HttpResponse(f"Sorry we have no meaning for the word '{word}' please use a better dictionary :)")
 
 
+def clipboard_view(request):
+    checked_meaning = request.POST.get('meaning')
+    pyperclip.copy(checked_meaning)
+
+    return HttpResponse(f"copied word meaning to your clipboard")
 
 
 
