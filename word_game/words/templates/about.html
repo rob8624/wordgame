@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{%  block content %}
+<body>
+
+<div>
+    <a href="{% url 'home' %}">Back to app</a>
+</div>
+<div class="container" style="padding-top:100px">
+    <div class="text-center display-1">
+        <p>Word Meanings</p>
+    </div>
+    <div class="text-center">
+        <p>A small dictionary type project made in Django and using HTMX</p>
+    </div>
+    <hr>
+<div class="container">
+    <section>
+        <div><h3>Overview</h3></div>
+        <h6>Thanks for taking the time to find out more about this little app that I created.
+        This is just a brief summary of how it works and the code involved, including a link
+            to the Github repo which can be found here <a href="#">girhub link</a>. I am a
+            relative beginner at Web Development and coding, I have deploy a couple of simple
+            Blog sites but am now starting to develop a portfolio of self built projects to help
+            me grow as a developer and learn all about this stuff! I am still learning Python, which
+            I love doing, and implementing it within website creation is challenging but rewarding.
+            This app was built so I could start learning HTMX, a new but very useful technology.
+        </h6>
+      <h5>The app is built using:</h5>
+      <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-3 bg-light p-3 border">
+      <div style="padding-left:20px;">
+      <li>Python pydictinary module</li><li>Django (total overkill for this) </li><li>HTMX (enabling a SPA vibe) </li><li>Bootstrap (quick and easy styling)</li>
+      <li>Git/Github (version control)</li><li>Railway (deployment)</li>
+      </div>
+          </div>
+          <div class="col-lg-9">
+              This is all pretty  straight forward, and it enabled me to quickly build the app although Django is definatly overkill
+              for such a project. There were no models involved
+              The purpose of lorem ipsum is to create a natural looking block of text (sentence, paragraph, page, etc.) that doesn't distract from the layout. A practice not without controversy, laying out pages with meaningless filler text can be very useful when the focus is meant to be on design, not content.
+
+The passage experienced a surge in popularity during the 1960s when Letraset used it on their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text with their software. Today it's seen all around the web; on templates, websites, and stock designs. Use our generator to get your own, or read on for the authoritative history of lorem ipsum.
+          </div>
+      </div>
+
+    </section>
+</div>
+
+
+
+
+</div>
+</body>
+</html>
+{% endblock %}

@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {%  block content %}
-
-
-<div id="search_input">
-    <div class="container" style="padding-top: 150px;">
+<div id="about_swap">
+    <div id="search_input">
+<div><a hx-post="/about" hx-target="#about_swap" hx-push-url="/about" href="#">About</a></div>
+        <div class="container" style="padding-top: 150px;">
         <div class=" row">
 
            <h1 style="color:#5cb85c;">Word meanings....</h1>
@@ -29,5 +29,6 @@
 
         </div>
     </div>
+</div>
 </div>
 {% endblock %}

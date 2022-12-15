@@ -35,6 +35,8 @@ def clipboard_view(request):
     return HttpResponse(f"copied word meaning to your clipboard")
 
 
+def about_view(request):
 
+    return render(request, "about.html")
 
 
