@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<hr>
+<div class="container">
+    <h1>{{ word }}</h1>
+    <p class="fst-italic"><small>The below meanings have been found, select meaning and click button to copy</small></p>
+    </div>
+<hr>
+{% for key, value in meanings.items %}
+<h1 class="fw-light fst-italic">{{key}}</h1>
+<div class="form-check-inline">
+        {% for x in value %}
+        <input class="form-check-input" type="radio" name="meaning" value="{{ x }}" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault"></label>
+        "{{ x }}"
+        {% endfor %}
+</div>
+{% endfor %}
+</div>
+<div>
+<div style="padding-top:10px">
+<button class="btn btn-primary" type="submit" hx-include="[name='meaning']" hx-post="/clipboard">Copy to clipboard</button>
+</div>
+</body>
+</html>
